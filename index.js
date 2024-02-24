@@ -1,6 +1,6 @@
-import Manager from "./lib/Manager";
-import Engineer from "./lib/Engineer";
-import Intern from "./lib/Intern";
+import Manager from "../lib/Manager";
+import Engineer from "../lib/Engineer";
+import Intern from "../lib/Intern";
 import path from "path";
 import fs from "fs";
 import inquirer from "inquirer";
@@ -30,3 +30,29 @@ const internQuestions = [
     "Interns Employee ID",
     "Interns School"
 ];
+
+const managerInput = function (teamManagerQuestions) {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: teamManagerQuestions[0],
+            name: 'teamManagerName'
+        },
+        {
+            type: 'input',
+            message: teamManagerQuestions[1],
+            name: 'teamManagerID'
+        },
+        {
+            type: 'input',
+            message: teamManagerQuestions[2],
+            name: 'teamManagerEmail'
+        },
+        {
+            type: 'input',
+            message: teamManagerQuestions[3],
+            name: 'teamManagerOffice'
+        }
+    ]);
+};
+managerInput();
