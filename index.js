@@ -64,22 +64,22 @@ const engineerInput = function (engineerQuestions) {
         {
             type: 'input',
             message: engineerQuestions[0],
-            name: 'teamManagerName'
+            name: 'engineerName'
         },
         {
             type: 'input',
             message: engineerQuestions[1],
-            name: 'teamManagerID'
+            name: 'engineerID'
         },
         {
             type: 'input',
             message: engineerQuestions[2],
-            name: 'teamManagerEmail'
+            name: 'engineerEmail'
         },
         {
             type: 'input',
             message: engineerQuestions[3],
-            name: 'teamManagerOffice'
+            name: 'engineerGithub'
         }
     ]);
 };
