@@ -32,7 +32,6 @@ const internQuestions = [
 ];
 
 const managerInput = function (teamManagerQuestions) {
-    console.log("Test")
     return inquirer.prompt([
         {
             type: 'input',
@@ -59,7 +58,6 @@ const managerInput = function (teamManagerQuestions) {
 managerInput(teamManagerQuestions);
 
 const engineerInput = function (engineerQuestions) {
-    console.log("Test")
     return inquirer.prompt([
         {
             type: 'input',
@@ -84,3 +82,24 @@ const engineerInput = function (engineerQuestions) {
     ]);
 };
 engineerInput(engineerQuestions);
+
+const internInput = function (internQuestions) {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: internQuestions[0],
+            name: 'internName'
+        },
+        {
+            type: 'input',
+            message: internQuestions[1],
+            name: 'internID'
+        },
+        {
+            type: 'input',
+            message: internQuestions[2],
+            name: 'internSchool'
+        }
+    ]);
+};
+internInput(internQuestions);
