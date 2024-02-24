@@ -10,3 +10,23 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
+
+const teamManagerQuestions = [
+    "Team Manager Name",
+    "Team Manager Employee ID",
+    "Team Manager Email Address",
+    "Team Manager Office Number"
+];
+
+const engineerQuestions = [
+    "Engineers Name",
+    "Engineers Employee ID",
+    "Engineers Email Address",
+    "Engineers GitHub Username"
+];
+
+const internQuestions = [
+    "Interns Name",
+    "Interns Employee ID",
+    "Interns School"
+];
