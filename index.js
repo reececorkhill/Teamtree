@@ -57,3 +57,30 @@ const managerInput = function (teamManagerQuestions) {
     ]);
 };
 managerInput(teamManagerQuestions);
+
+const engineerInput = function (engineerQuestions) {
+    console.log("Test")
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: engineerQuestions[0],
+            name: 'teamManagerName'
+        },
+        {
+            type: 'input',
+            message: engineerQuestions[1],
+            name: 'teamManagerID'
+        },
+        {
+            type: 'input',
+            message: engineerQuestions[2],
+            name: 'teamManagerEmail'
+        },
+        {
+            type: 'input',
+            message: engineerQuestions[3],
+            name: 'teamManagerOffice'
+        }
+    ]);
+};
+engineerInput(engineerQuestions);
