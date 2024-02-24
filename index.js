@@ -53,9 +53,13 @@ const managerInput = function (teamManagerQuestions) {
             message: teamManagerQuestions[3],
             name: 'teamManagerOffice'
         }
-    ]);
+    ])
+    .then((response) => {
+        !isNaN(response.teamManagerOffice)
+        ? addAnotherMember()
+        : addAnotherMember()
+    });
 };
-managerInput(teamManagerQuestions);
 
 const engineerInput = function (engineerQuestions) {
     return inquirer.prompt([
@@ -81,7 +85,7 @@ const engineerInput = function (engineerQuestions) {
         }
     ]);
 };
-engineerInput(engineerQuestions);
+// engineerInput(engineerQuestions);
 
 const internInput = function (internQuestions) {
     return inquirer.prompt([
@@ -102,7 +106,7 @@ const internInput = function (internQuestions) {
         }
     ]);
 };
-internInput(internQuestions);
+// internInput(internQuestions);
 
 const addAnotherMember = function () {
     return inquirer.prompt([
@@ -118,4 +122,6 @@ const addAnotherMember = function () {
         }
     ])
 }
-addAnotherMember();
+// addAnotherMember();
+
+managerInput(teamManagerQuestions);
