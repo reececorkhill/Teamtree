@@ -103,3 +103,19 @@ const internInput = function (internQuestions) {
     ]);
 };
 internInput(internQuestions);
+
+const addAnotherMember = function () {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            message: 'Add Another Member or Finish Building Team?',
+            choices: [
+                'Add Engineer',
+                'Add Intern',
+                'Finish Building Team'
+            ],
+            name: 'addOrFinish'
+        }
+    ])
+}
+addAnotherMember();
