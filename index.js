@@ -85,7 +85,6 @@ const engineerInput = function (engineerQuestions) {
         }
     ]);
 };
-// engineerInput(engineerQuestions);
 
 const internInput = function (internQuestions) {
     return inquirer.prompt([
@@ -106,7 +105,6 @@ const internInput = function (internQuestions) {
         }
     ]);
 };
-// internInput(internQuestions);
 
 const addAnotherMember = function () {
     return inquirer.prompt([
@@ -121,7 +119,15 @@ const addAnotherMember = function () {
             name: 'addOrFinish'
         }
     ])
+    .then(function(response) {
+        if (response.addOrFinish === 'Add Engineer') {
+            engineerInput(engineerQuestions);
+        } else if (response.addOrFinish === 'Add Intern') {
+            internInput(internQuestions);
+        } else {
+            console.log("This will call the render function!")
+        }
+    });
 }
-// addAnotherMember();
 
 managerInput(teamManagerQuestions);
