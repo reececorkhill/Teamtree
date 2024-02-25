@@ -55,7 +55,7 @@ const managerInput = function (teamManagerQuestions) {
         }
     ])
     .then((response) => {
-        !isNaN(response.teamManagerOffice)
+        (response.teamManagerOffice)
         ? addAnotherMember()
         : addAnotherMember()
     });
@@ -83,7 +83,12 @@ const engineerInput = function (engineerQuestions) {
             message: engineerQuestions[3],
             name: 'engineerGithub'
         }
-    ]);
+    ])
+    .then((response) => {
+        (response.engineerGithub)
+        ? addAnotherMember()
+        : addAnotherMember()
+    });
 };
 
 const internInput = function (internQuestions) {
@@ -103,7 +108,12 @@ const internInput = function (internQuestions) {
             message: internQuestions[2],
             name: 'internSchool'
         }
-    ]);
+    ])
+    .then((response) => {
+        (response.internSchool)
+        ? addAnotherMember()
+        : addAnotherMember()
+    });
 };
 
 const addAnotherMember = function () {
