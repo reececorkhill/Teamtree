@@ -30,6 +30,7 @@ const engineerQuestions = [
 const internQuestions = [
     "Interns Name",
     "Interns Employee ID",
+    "Interns Email Address",
     "Interns School"
 ];
 
@@ -118,13 +119,23 @@ const internInput = function (internQuestions) {
         {
             type: 'input',
             message: internQuestions[2],
+            name: 'internEmail'
+        },
+        {
+            type: 'input',
+            message: internQuestions[3],
             name: 'internSchool'
         }
     ])
     .then((response) => {
-        (response.internSchool)
-        ? addAnotherMember()
-        : addAnotherMember()
+        const teamIntern = new Intern(response.internName, response.internID, response.internEmail, response.internSchool);
+        team.push(teamIntern);
+        console.log(team)
+        if (response.internSchool) {
+            addAnotherMember()
+        } else {
+            addAnotherMember() 
+        };
     });
 };
 
