@@ -92,9 +92,14 @@ const engineerInput = function (engineerQuestions) {
         }
     ])
     .then((response) => {
-        (response.engineerGithub)
-        ? addAnotherMember()
-        : addAnotherMember()
+        const teamEngineer = new Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.engineerGithub);
+        team.push(teamEngineer);
+        console.log(team)
+        if (response.engineerGithub) {
+            addAnotherMember()
+        } else {
+            addAnotherMember() 
+        };
     });
 };
 
