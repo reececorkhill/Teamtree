@@ -2,12 +2,17 @@ import {Manager} from "./lib/Manager.js";
 import {Engineer} from "./lib/Engineer.js";
 import {Intern} from "./lib/Intern.js";
 import path from "path";
+import {render} from './src/page-template.js' 
+import { fileURLToPath } from 'url';
+import { existsSync, mkdirSync } from 'fs';
+import util from "util";
 import fs from "fs";
 import inquirer from "inquirer";
-// import render from "./src/page-template.js";
-
-// const OUTPUT_DIR = path.resolve(__dirname, "output");
-// const outputPath = path.join(OUTPUT_DIR, "team.html");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
@@ -158,7 +163,13 @@ const addAnotherMember = function () {
         } else if (response.addOrFinish === 'Add Intern') {
             internInput(internQuestions);
         } else {
-            console.log("This will call the render function!")
+            const createDirIfNotExists = () =>
+            !existsSync(OUTPUT_DIR) ? mkdirSync(OUTPUT_DIR) : undefined;
+            createDirIfNotExists('output');
+            const htmlFile = render(team);
+            writeFileAsync(outputPath, htmlFile)
+                .then(() => console.log('Teamtree Successfully Generated!'))
+                .catch((err) => console.error(err));
         }
     });
 }
