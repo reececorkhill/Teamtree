@@ -39,6 +39,8 @@ node index.js
 3. Once all team members have been entered, Teamtree will automatically generate an HTML file in the output folder
 4. Open the generated team.html file in your browser to view the compiled team information
 
+![Screenshot of Teamtree Generated File.](assets/screenshot.PNG)
+
 ## Tests
 
 To run the provided tests, please use the following command:
